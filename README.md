@@ -45,17 +45,47 @@ class DJOptions:
         DJOptions.Life = x
         print(f"목숨이 {x}개로 설정되었습니다.")
 
+import random
+
 def generate_questions(wordbook, count):
-    # 문제를 생성하는 로직을 구현해야 합니다.
-    # wordbook에서 count 개수만큼의 문제를 랜덤하게 선택하거나 생성합니다.
-    # 문제 리스트를 반환합니다.
-    pass
+    # 문제를 저장할 리스트 생성
+    questions = []
+
+    # wordbook에서 count 개수만큼의 문제를 랜덤하게 선택하거나 생성하여 questions 리스트에 추가
+    for _ in range(count):
+        # wordbook에서 랜덤하게 단어 선택
+        random_word = random.choice(wordbook)
+
+        # 단어를 기반으로 문제 생성 또는 단어 그 자체를 문제로 사용
+        question = generate_question_from_word(random_word)
+
+        # 문제 리스트에 추가
+        questions.append(question)
+
+    # 생성된 문제 리스트 반환
+    return questions
+
+def generate_question_from_word(word):
+    # 단어를 기반으로 문제 생성 또는 단어 그 자체를 문제로 사용하는 로직을 구현
+    # 예를 들어, 단어의 뜻을 문제로 만들거나 단어의 알파벳을 섞어서 문제로 만들 수 있습니다.
+    # 이 예시에서는 단어 그 자체를 문제로 사용하도록 가정합니다.
+    return word
+
 
 def check_answer(question, answer):
-    # 사용자의 답(answer)을 정답과 비교하는 로직을 구현해야 합니다.
-    # 답이 맞으면 count를 증가시키고, 틀리면 Life를 감소시킵니다.
-    # 결과를 출력합니다.
-    pass
+    # 정답을 제공합니다
+    correct_answer = get_correct_answer(question)
+
+    if answer == correct_answer:
+        count += 1
+        print("정답입니다!")
+    else:
+        life -= 1
+        print("오답입니다!")
+
+    print("맞은 개수:", count)
+    print("남은 기회:", life)
+
 
 
    
