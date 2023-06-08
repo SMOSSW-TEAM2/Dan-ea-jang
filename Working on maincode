@@ -8,24 +8,25 @@ def load_dictionary(file_path):
 
 def start_practice(dictionary):
     keys = list(dictionary.keys())
-    score = 0
+    lives = 3
 
-    num_of_questions = int(input("몇 문제를 연습하시겠습니까? "))
-
-    for _ in range(num_of_questions):
+    for _ in range(3):
         question = random.choice(keys)
         answer = dictionary[question]
 
         user_answer = input("{}의 뜻은? ".format(question))
 
         if user_answer == answer:
-            print("정답입니다!")
-            score += 1
+            print("정답입니다.")
         else:
-            print("오답입니다.")
+            lives -= 1
+            if lives == 0:
+                print("목숨이 모두 소진되었습니다. 게임 종료!")
+                break
+            else:
+                print("오답입니다. 목숨이 {}개 남았습니다.".format(lives))
 
-    print("연습이 종료되었습니다.")
-    print("당신의 점수는 {}/{}입니다.".format(score, num_of_questions))
+    print("총 점수: {}".format(3 - lives))
 
 def show_rules():
     with open("rules.txt", "r") as file:
