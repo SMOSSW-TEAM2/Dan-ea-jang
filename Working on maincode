@@ -41,7 +41,7 @@ def show_rules():
 def add_korword():
     word = input("추가할 단어를 입력하세요: ")
     meaning = input("단어의 뜻을 입력하세요: ")
-    with open("korean_dictionary.yml", "a") as file:
+    with open("단어장_l_kr.yml", "a") as file:
         file.write("{}:{}\n".format(word, meaning))
     
     print("단어가 추가되었습니다.")
@@ -50,7 +50,7 @@ def add_korword():
 def add_engword():
     word = input("추가할 단어를 입력하세요: ")
     meaning = input("단어의 뜻을 입력하세요: ")
-    with open("english_dictionary.yml", "a") as file:
+    with open("단어장_l_jp.yml", "a") as file:
         file.write("{}:{}\n".format(word, meaning))
     
     print("단어가 추가되었습니다.")
@@ -60,15 +60,15 @@ def show_dictionary(dictionary):
         print("{} - {}".format(word, meaning))
 
 def load_english_dictionary():
-    dictionary_file = "english_dictionary.yml"
+    dictionary_file = "단어장_l_kr.yml"
     return load_dictionary(dictionary_file)
 
 def load_korean_dictionary():
-    dictionary_file = "korean_dictionary.yml"
+    dictionary_file = "단어장_l_jp.yml"
     return load_dictionary(dictionary_file)
 
-english_dictionary = load_english_dictionary()
-korean_dictionary = load_korean_dictionary()
+단어장_l_kr = load_english_dictionary()
+단어장_l_jp = load_korean_dictionary()
 
 print("□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□")
 print("□■■■■■■□□■□□□□■■■■□□□■□□□■■■■■■■□■□□□")
@@ -91,19 +91,19 @@ while True:
 
     if command == 1:
         print("한영 단어장 연습을 시작합니다.")
-        start_practice(english_dictionary)
+        start_practice(단어장_l_kr)
 
     elif command == 2:
         print("한영 단어장을 확인합니다.")
-        show_dictionary(english_dictionary)
+        show_dictionary(단어장_l_kr)
 
     elif command == 3:
         print("한일 단어장 연습을 시작합니다.")
-        start_practice(korean_dictionary)
+        start_practice(단어장_l_jp)
 
     elif command == 4:
         print("한일 단어장을 확인합니다.")
-        show_dictionary(korean_dictionary)
+        show_dictionary(단어장_l_jp)
 
     elif command == 5:
         print("단어장의 규칙입니다.")
