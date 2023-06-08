@@ -33,6 +33,23 @@ def add_word():
         file.write("{}:{}\n".format(word, meaning))
     
     print("단어가 추가되었습니다.")
+    
+   def delete_word():
+    if word in dictionary:
+        dictionary.remove(word)
+        print(f"'{word}'이(가) 삭제되었습니다.")
+   
+# 단어장 리스트 생성
+dictionary = {"apple": "사과", "banana": "바나나", "lemon": "레몬", "grape": "포도"}
+
+# "banana" 단어 삭제
+delete_word(dctionary, "banana")
+
+# "grape" 단어 삭제
+delete_word(dictionary, "grape")
+
+# 삭제 후 단어장 출력
+print(dictionary)
 
 def show_dictionary():
     with open("dictionary.txt", "r") as file:
@@ -94,3 +111,24 @@ while True:
 
     else:
         print("잘못된 입력입니다.")
+
+# 단어장 딕셔너리 생성
+word_dict = {"apple": "사과", "banana": "바나나"}
+
+# 초기 점수 설정
+score = 0
+
+# 문제 출제 함수
+def quiz():
+    global score  # 점수 변수를 전역 변수로 사용
+    
+    for word, definition in dictionary.items():
+        answer = input(f"{definition}은(는) 무엇일까요? ")
+        if answer == word:
+            score += 1  # 정답이면 점수 1 증가
+
+# 문제 출제 실행
+quiz()
+
+# 결과 출력
+print("점수:", score)
