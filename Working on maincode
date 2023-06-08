@@ -98,11 +98,11 @@ while True:
         show_dictionary(단어장_l_kr)
 
     elif command == 3:
-        print("한일 단어장 연습을 시작합니다.")
+        print("영일 단어장 연습을 시작합니다.")
         start_practice(단어장_l_jp)
 
     elif command == 4:
-        print("한일 단어장을 확인합니다.")
+        print("영일 단어장을 확인합니다.")
         show_dictionary(단어장_l_jp)
 
     elif command == 5:
@@ -114,7 +114,7 @@ while True:
         add_korword()
     
     elif command == 7:
-        print("한일단어를 추가합니다.")
+        print("일단어를 추가합니다.")
         add_engword()
     
     elif command == 8:
