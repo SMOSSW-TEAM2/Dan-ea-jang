@@ -37,16 +37,16 @@ def add_word():
     
     print("단어가 추가되었습니다.")
     
-   def delete_word():
-    if word in dictionary:
-        dictionary.remove(word)
+def delete_word(word_dict, word):
+    if word in word_dict:
+        del word_dict[word]
         print(f"'{word}'이(가) 삭제되었습니다.")
    
 # 단어장 리스트 생성
 dictionary = {"apple": "사과", "banana": "바나나", "lemon": "레몬", "grape": "포도"}
 
 # "banana" 단어 삭제
-delete_word(dctionary, "banana")
+delete_word(dictionary, "banana")
 
 # "grape" 단어 삭제
 delete_word(dictionary, "grape")
