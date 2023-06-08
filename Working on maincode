@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jun  8 22:14:55 2023
+
+@author: 8400
+"""
+
 import random
 import yaml
 
@@ -23,6 +30,28 @@ def start_practice(dictionary):
                 print("정답은 {}입니다.".format(answer))
             else:
                 print("다시 입력해주세요.")
+
+def show_rules():
+    with open("rules.txt", "r") as file:
+        rules = file.read()
+        print(rules)
+
+def add_korword():
+    word = input("추가할 단어를 입력하세요: ")
+    meaning = input("단어의 뜻을 입력하세요: ")
+    with open("korean_dictionary.yml", "a") as file:
+        file.write("{}:{}\n".format(word, meaning))
+    
+    print("단어가 추가되었습니다.")
+    
+
+def add_engword():
+    word = input("추가할 단어를 입력하세요: ")
+    meaning = input("단어의 뜻을 입력하세요: ")
+    with open("english_dictionary.yml", "a") as file:
+        file.write("{}:{}\n".format(word, meaning))
+    
+    print("단어가 추가되었습니다.")
 
 def show_dictionary(dictionary):
     for word, meaning in dictionary.items():
@@ -75,6 +104,18 @@ while True:
         show_dictionary(korean_dictionary)
 
     elif command == 5:
+        print("단어장의 규칙입니다.")
+        show_rules()
+    
+    elif command == 6:
+        print("한영단어를 추가합니다.")
+        add_korword()
+    
+    elif command == 7:
+        print("한일단어를 추가합니다.")
+        add_engword()
+    
+    elif command == 8:
         print("단어장 프로그램을 이용해주셔서 감사합니다.")
         break
 
