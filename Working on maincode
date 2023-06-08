@@ -80,4 +80,39 @@ print("=" * 74)
 print("단어장 프로그램에 오신 것을 환영합니다.")
 
 while True:
-    command = int(input("1. 한영 단어장 연습 시작\n2. 한영 단어장 확인\n3. 한일 단어장 연습 시작\n4. 한일 단어장 확인\n5. 단
+    command = int(input("1. 한영 단어장 연습 시작\n2. 한영 단어장 확인\n3. 한일 단어장 연습 시작\n4. 한일 단어장 확인\n5. 단어장의 규칙 보기\n6. 한영 단어 추가하기\n7. 한일 단어 추가하기\n8. 종료: "))
+
+    if command == 1:
+        print("한영 단어장 연습을 시작합니다.")
+        start_practice(english_dictionary)
+
+    elif command == 2:
+        print("한영 단어장을 확인합니다.")
+        show_dictionary(english_dictionary)
+
+    elif command == 3:
+        print("한일 단어장 연습을 시작합니다.")
+        start_practice(korean_dictionary)
+
+    elif command == 4:
+        print("한일 단어장을 확인합니다.")
+        show_dictionary(korean_dictionary)
+
+    elif command == 5:
+        print("단어장의 규칙입니다.")
+        show_rules()
+
+    elif command == 6:
+        print("한영 단어를 추가합니다.")
+        add_korword()
+
+    elif command == 7:
+        print("한일 단어를 추가합니다.")
+        add_engword()
+
+    elif command == 8:
+        print("단어장 프로그램을 이용해주셔서 감사합니다.")
+        break
+
+    else:
+        print("잘못된 입력입니다.")
