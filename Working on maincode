@@ -12,9 +12,9 @@ def start_practice(dictionary):
     for _ in range(3):
         question = random.choice(keys)
         answer = dictionary[question]
-        
+
         user_answer = input("{}의 뜻은? ".format(question))
-        
+
         if user_answer == answer:
             print("정답입니다.")
             break
@@ -24,13 +24,22 @@ def start_practice(dictionary):
             else:
                 print("다시 입력해주세요.")
 
-# 단어장 파일 경로
-dictionary_file = "dictionary.yml"
+def show_dictionary(dictionary):
+    for word, meaning in dictionary.items():
+        print("{} - {}".format(word, meaning))
 
-# 단어장 로드
-dictionary = load_dictionary(dictionary_file)
+def load_english_dictionary():
+    dictionary_file = "english_dictionary.yml"
+    return load_dictionary(dictionary_file)
 
-print("□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□")
+def load_korean_dictionary():
+    dictionary_file = "korean_dictionary.yml"
+    return load_dictionary(dictionary_file)
+
+english_dictionary = load_english_dictionary()
+korean_dictionary = load_korean_dictionary()
+
+print("□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□")
 print("□■■■■■■□□■□□□□■■■■□□□■□□□■■■■■■■□■□□□")
 print("□■□□□□□□□■□□□■□□□□■□□■□□□□□□■□□□□■□□□")
 print("□■□□□□□□□■□□□■□□□□■□□■□□□□□□■□□□□■□□□")
@@ -47,32 +56,27 @@ print("=" * 74)
 print("단어장 프로그램에 오신 것을 환영합니다.")
 
 while True:
-    command = int(input("1. 단어장 연습 시작\n2. 단어장 규칙\n3. 단어 추가\n4. 단어 확인\n5. 설정 변경\n6. 종료: "))
+    command = int(input("1. 한영 단어장 연습 시작\n2. 한영 단어장 확인\n3. 한일 단어장 연습 시작\n4. 한일 단어장 확인\n5. 종료: "))
 
     if command == 1:
-        print("단어장 연습을 시작합니다.")
-        start_practice(dictionary)
+        print("한영 단어장 연습을 시작합니다.")
+        start_practice(english_dictionary)
 
     elif command == 2:
-        print("단어장의 규칙입니다.")
-        show_rules()
+        print("한영 단어장을 확인합니다.")
+        show_dictionary(english_dictionary)
 
     elif command == 3:
-        print("단어를 추가합니다.")
-        add_word()
+        print("한일 단어장 연습을 시작합니다.")
+        start_practice(korean_dictionary)
 
     elif command == 4:
-        print("단어를 확인합니다.")
-        show_dictionary()
+        print("한일 단어장을 확인합니다.")
+        show_dictionary(korean_dictionary)
 
     elif command == 5:
-        print("설정을 변경합니다.")
-        change_settings()
-
-    elif command == 6:
         print("단어장 프로그램을 이용해주셔서 감사합니다.")
         break
 
     else:
         print("잘못된 입력입니다.")
-
