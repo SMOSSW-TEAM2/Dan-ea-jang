@@ -2,6 +2,9 @@ import random
 
 dictionary = {"apple": "사과", "banana": "바나나", "lemon": "레몬", "grape": "포도"}
 
+# 목숨 설정
+lives = 3
+
 def start_practice():
     keys = list(dictionary.keys())
 
@@ -113,7 +116,7 @@ while True:
         print("잘못된 입력입니다.")
 
 # 단어장 딕셔너리 생성
-word_dict = {"apple": "사과", "banana": "바나나"}
+word_dict = {"apple": "사과", "banana": "바나나", "lemon": "레몬", "grape": "포도"}
 
 # 초기 점수 설정
 score = 0
@@ -126,9 +129,58 @@ def quiz():
         answer = input(f"{definition}은(는) 무엇일까요? ")
         if answer == word:
             score += 1  # 정답이면 점수 1 증가
+            
+            # 한국어 규칙 함수
+def korean_rules():
+    print("한국어 규칙을 출력합니다.")
+
+# 일본어 규칙 함수
+def japanese_rules():
+    print("일본어 규칙을 출력합니다.")
+
+# 영어 규칙 함수
+def english_rules():
+    print("영어 규칙을 출력합니다.")
+
+# DJ_ptions.Language(x)
+def DJ_ptions_Language(x):
+    global lang
+    if x == 1:
+        lang = "한국어"
+    elif x == 2:
+        lang = "일본어"
+    elif x == 3:
+        lang = "영어"
+    else:
+        print("지원하지 않는 언어 옵션입니다.")
+
+# DJ_rule_local(lang)
+def DJ_rule_local(lang):
+    if lang == "한국어":
+        korean_rules()
+    elif lang == "일본어":
+        japanese_rules()
+    elif lang == "영어":
+        english_rules()
+    else:
+        print("지원하지 않는 언어입니다.")
 
 # 문제 출제 실행
 quiz()
 
 # 결과 출력
 print("점수:", score)
+
+# 목숨 부여 함수
+def Life(x):
+    global lives
+    lives += x
+
+# 문제 출제 실행
+Count(5)
+
+# 목숨 부여 실행
+Life(2)
+
+# 결과 출력
+print("남은 목숨:", lives)
