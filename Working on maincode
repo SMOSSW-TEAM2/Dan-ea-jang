@@ -1,6 +1,7 @@
 import random
 
 dictionary = {"apple": "사과", "banana": "바나나", "lemon": "레몬", "grape": "포도"}
+#대신에 yml파일 추가
 
 def start_practice():
     keys = list(dictionary.keys())
@@ -94,3 +95,4 @@ while True:
 
     else:
         print("잘못된 입력입니다.")
+#아직 까지는 일본어와 한글 변환설정 
