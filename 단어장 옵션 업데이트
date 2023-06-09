@@ -3,6 +3,26 @@
 
 #===============언어===================
 Language = ""  # 언어
+class DJOptions:
+    def __init__(self):
+        self.lang = ""
+        self.seconds = 0
+        self.count = 0
+        self.life = 0
+
+    def set_language(self, language):
+        self.lang = language
+        print(f"언어가 {language}로 설정되었습니다.")
+        
+#options = DJOptions()
+
+#options.set_language("한국어")
+# 출력: 언어가 한국어로 설정되었습니다.
+
+#options.set_language("English")
+# 출력: 언어가 English로 설정되었습니다.
+
+
 
 #===============난이도=================
 # 단어의 난이도 측정을 어떻게 할건가요?
@@ -10,16 +30,44 @@ Seconds = 0  # 문제당 시간
 Count = 0  # 문제 개수
 Life = 0  # 목숨 수
 
-#=================색맹================
-Color_Blindness = 0  # 색맹용 0이면 아니면 1
-#=================난이도================
+class DJOptions:
+    def __init__(self):
+        self.lang = ""
+        self.seconds = 0
+        self.count = 0
+        self.life = 0
+
+    def set_language(self, language):
+        self.lang = language
+        print(f"언어가 {language}로 설정되었습니다.")
+
+    def set_difficulty(self, seconds, count, life):
+        if seconds <= 0 or count <= 0 or life <= 0:
+            print("난이도 설정값은 0보다 커야 합니다.")
+            return
+
+        self.seconds = seconds
+        self.count = count
+        self.life = life
+        print(f"난이도가 설정되었습니다. (문제당 시간: {seconds}초, 문제 개수: {count}개, 목숨 수: {life}개)")
+
+ 
+
+
+
 # random 문제 출제
 # 맞으면 count+=1, 틀리면 Life -=1
 
 class DJOptions:
-    def Language(self, x):
-        global lang
-        lang = x
+    def __init__(self):
+        self.lang = ""
+        self.seconds = 0
+        self.count = 0
+        self.life = 0
+
+    def set_language(self, language):
+        self.lang = language
+        print(f"언어가 {language}로 설정되었습니다.")
 
     def Count(self, x, wordbook):
         if x <= 0:
