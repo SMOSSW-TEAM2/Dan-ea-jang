@@ -3,26 +3,6 @@
 
 #===============언어===================
 Language = ""  # 언어
-class DJOptions:
-    def __init__(self):
-        self.lang = ""
-        self.seconds = 0
-        self.count = 0
-        self.life = 0
-
-    def set_language(self, language):
-        self.lang = language
-        print(f"언어가 {language}로 설정되었습니다.")
-        
-#options = DJOptions()
-
-#options.set_language("한국어")
-# 출력: 언어가 한국어로 설정되었습니다.
-
-#options.set_language("English")
-# 출력: 언어가 English로 설정되었습니다.
-
-
 
 #===============난이도=================
 # 단어의 난이도 측정을 어떻게 할건가요?
